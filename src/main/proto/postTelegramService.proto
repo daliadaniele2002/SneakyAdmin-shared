@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "model.proto";
+
+option java_package = "daniele.dalia.sneakyadminshared.grpc.telegram";
+
+// gRPC сервис
+service PostTelegramService {
+  rpc SendOnReview (PostProto) returns (google.protobuf.Empty);
+}

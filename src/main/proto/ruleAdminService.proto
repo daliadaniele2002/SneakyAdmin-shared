@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "model.proto";
+
+option java_package = "daniele.dalia.sneakyadminshared.grpc.admin";
+
+// gRPC сервис
+service RuleAdminService {
+  rpc AddRule (RuleProto) returns (IdProto);
+  rpc getAllRules (IdProto) returns (RulesProto);
+  rpc DeletePostById (IdProto) returns (google.protobuf.Empty);
+}
+
+message RuleProto {
+  string rule = 1;
+}
+
+message RulesProto {
+  repeated RuleProto rule = 1;
+}
